@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Upload Your CSV - Finance Assistant</title>
+  <!-- Load CSS via Flask -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="home-container">
+    <div class="card">
+      <h1>Upload Your Credits & Debits</h1>
+      <p>Please upload your CSV file to analyze your spending patterns and track your financial goals.</p>
+      
+      <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".csv" required>
+    <button type="submit">Upload & Analyze</button>
+</form>
+
+      
+      <a href="{{ url_for('landing') }}" class="btn btn-secondary">Back</a>
+    </div>
+  </div>
+</body>
+</html>

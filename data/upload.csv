@@ -1,0 +1,7 @@
+date,description,amount,type
+2025-09-01,Zomato Order,420,debit
+2025-09-02,Salary,50000,credit
+2025-09-03,BigBasket,1800,debit
+2025-09-04,Netflix Subscription,499,debit
+2025-09-05,Rent,15000,debit
+2025-09-06,Uber Ride,350,debit

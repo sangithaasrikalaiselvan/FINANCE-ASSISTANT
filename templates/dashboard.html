@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Finance Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Load CSS via Flask -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Finance Dashboard</h1>
+
+    <!-- Charts Section -->
+    <div class="charts-wrapper">
+      <div class="chart-container">
+        <h2>Monthly Spending</h2>
+        <canvas id="lineChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h2>Spending by Category</h2>
+        <canvas id="pieChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Goal Dashboard Card -->
+    <div class="goal-wrapper">
+      <h2>Check Goal Feasibility</h2>
+      <form id="goalForm">
+        <label>Goal amount (₹):
+          <input id="goal_amount" required placeholder="e.g., 50000">
+        </label>
+        <label>Months to achieve:
+          <input id="months" type="number" value="3" required>
+        </label>
+        <label>Monthly income (optional):
+          <input id="monthly_income" placeholder="e.g., 50000">
+        </label>
+        <button type="submit">Check Goal</button>
+      </form>
+      <div id="goalResult" class="goal-result"></div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

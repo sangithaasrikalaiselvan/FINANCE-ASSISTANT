@@ -1,0 +1,199 @@
+body { 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background:#f4f7f8; 
+  margin:0; 
+  padding:0; 
+  color:#333; 
+}
+
+h1,h2 { 
+  text-align:center; 
+  color:#f5e5e5; 
+}
+
+/* ---------------- Landing Page ---------------- */
+.landing-container {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  background: url('/static/bg_landing.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.landing-container::before {
+  content:'';
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.35); /* dark overlay for readability */
+  z-index:1;
+}
+
+.landing-container .card {
+  background: rgba(255,255,255,0.6); /* semi-transparent card */
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  text-align:center;
+  max-width:450px;
+  width:90%;
+  position:relative;
+  z-index:2;
+  backdrop-filter: blur(4px);
+}
+
+/* ---------------- Home Page ---------------- */
+.home-container {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  background: url('/static/bg_home.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.home-container::before {
+  content:'';
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.35);
+  z-index:1;
+}
+
+.home-container .card {
+  background: rgba(255,255,255,0.6);
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  text-align:center;
+  max-width:450px;
+  width:90%;
+  position:relative;
+  z-index:2;
+  backdrop-filter: blur(4px);
+}
+
+/* ---------------- Dashboard Page ---------------- */
+.dashboard-container {
+  min-height:100vh;
+  background: url('/static/bg_dashboard.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  padding:30px 20px;
+}
+
+.dashboard-container::before {
+  content:'';
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.25);
+  z-index:1;
+}
+
+.dashboard-container .chart-container,
+.dashboard-container .goal-wrapper {
+  background: rgba(255,255,255,0.6); /* semi-transparent */
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  position:relative;
+  z-index:2;
+  backdrop-filter: blur(4px);
+}
+
+/* ---------------- Card ---------------- */
+.card p {
+  margin:15px 0;
+  line-height:1.5;
+  color:#555;
+}
+
+.btn {
+  display:inline-block;
+  padding:12px 20px;
+  background:#0a3764;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
+  transition:0.3s;
+  margin-top:10px;
+}
+
+.btn:hover { background:#0a3764; }
+
+.btn-secondary {
+  background:#888;
+}
+
+.btn-secondary:hover { background:#666; }
+
+/* Dashboard charts */
+.charts-wrapper {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+  margin:20px auto;
+  width:95%;
+}
+
+.chart-container {
+  flex:1 1 400px;
+  max-width:600px;
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+canvas { width:100% !important; height:300px !important; }
+
+.goal-wrapper {
+  max-width:500px;
+  margin:30px auto;
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+form label { display:block; margin:10px 0 5px; }
+input, button {
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+  box-sizing:border-box;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+
+button {
+  background-color:#0a3764;
+  color:white;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+button:hover { background-color:#0a3764; }
+
+.goal-result {
+  background:#e9f5ee;
+  padding:10px;
+  border-radius:6px;
+  margin-top:10px;
+  white-space:pre-line;
+  font-weight:bold;
+  color:#333;
+}
