@@ -4,12 +4,17 @@
   <meta charset="utf-8">
   <title>Finance Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Load three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
   <!-- Load CSS via Flask -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="dashboard-container">
-    <h1>Finance Dashboard</h1>
+    <!-- particle canvas sits behind content -->
+    <canvas id="dashboard-three-canvas" class="three-canvas"></canvas>
+
+    <h1 class="dashboard-title">Finance Dashboard</h1>
 
     <!-- Charts Section -->
     <div class="charts-wrapper">

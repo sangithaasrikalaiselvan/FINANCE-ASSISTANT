@@ -134,5 +134,4 @@ def api_check_goal():
         "suggestions": suggestions
     })
 
-if __name__=="__main__":
-    app.run(debug=True)
+

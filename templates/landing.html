@@ -5,14 +5,43 @@
   <title>Finance Assistant</title>
   <!-- Use url_for to correctly load CSS in Flask -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Lottie player (for lightweight 3D-like UI animation) -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r150/three.min.js"></script>
+
 </head>
 <body>
+  <div id="three-container" class="three-container"></div>
+
   <div class="landing-container">
+    <!-- Lottie animation container (behind the card) -->
+    <div id="landing-lottie" class="landing-lottie"></div>
+
     <div class="card">
       <h1>Finance Assistant</h1>
       <p>Your personal finance companion to track spendings, analyze patterns, and achieve your financial goals.</p>
       <a href="{{ url_for('home') }}" class="btn">Start with your Credits & Debits</a>
     </div>
   </div>
+
+  <!-- Initialize Lottie only on landing via inline small snippet (app.js also checks) -->
+  <script>
+    // fallback: if app.js didn't run yet, we create a lottie-player node (app.js will re-init if needed)
+    (function(){
+      const container = document.getElementById('landing-lottie');
+      if (!container) return;
+      // create lottie-player element
+      const lp = document.createElement('lottie-player');
+      // finance/coin-like animation from lottiefiles (public)
+      lp.setAttribute('src', 'https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json');
+      lp.setAttribute('background', 'transparent');
+      lp.setAttribute('speed', '1');
+      lp.setAttribute('style', 'width:420px; height:420px;');
+      lp.setAttribute('loop', '');
+      lp.setAttribute('autoplay', '');
+      container.appendChild(lp);
+    })();
+  </script>
+  <script src="{{ url_for('static', filename='three_effects.js') }}"></script>
+
 </body>
 </html>

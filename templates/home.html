@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -5,21 +6,28 @@
   <title>Upload Your CSV - Finance Assistant</title>
   <!-- Load CSS via Flask -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Load three.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
 </head>
 <body>
   <div class="home-container">
+    <!-- three.js canvas layer for subtle animated gradient -->
+    <canvas id="home-three-canvas" class="three-canvas"></canvas>
+
     <div class="card">
       <h1>Upload Your Credits & Debits</h1>
       <p>Please upload your CSV file to analyze your spending patterns and track your financial goals.</p>
-      
-      <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
-    <input type="file" name="file" accept=".csv" required>
-    <button type="submit">Upload & Analyze</button>
-</form>
 
-      
+      <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv" required>
+        <button type="submit">Upload & Analyze</button>
+      </form>
+
       <a href="{{ url_for('landing') }}" class="btn btn-secondary">Back</a>
     </div>
   </div>
+
+  <!-- app.js will initialize Three.js background if present -->
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>
