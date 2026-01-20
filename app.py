@@ -3,9 +3,11 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify
 from werkzeug.utils import secure_filename
 import pandas as pd
 import numpy as np
+import tempfile
+
 
 # ✅ Vercel-safe upload folder
-UPLOAD_FOLDER = "/tmp"
+UPLOAD_FOLDER = tempfile.gettempdir()
 ALLOWED_EXTENSIONS = {"csv"}
 
 app = Flask(
@@ -159,3 +161,5 @@ def api_check_goal():
         "months_needed_at_current_rate": round(months_needed,1) if months_needed else None,
         "suggestions": suggestions
     })
+if __name__ == "__main__":
+    app.run(debug=True)
